@@ -10,9 +10,10 @@ class BookController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        
+        $allBook = Book::all();
+        return view('admin', compact('allBook'));
     }
 
     /**
@@ -20,7 +21,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('book.create');
     }
 
     /**
@@ -28,7 +29,17 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validation = $request->validate([
+            'category'=> 'required',
+            'book_name'=> 'required',
+            'price'=> 'required',
+            'stock'=> 'required',
+            'publisher'=> 'required', 
+        ]);
+
+        Book::create($validation);
+
+        return redirect()->route('admin');
     }
 
     /**
@@ -36,7 +47,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        return view('book.show', compact('book'));
     }
 
     /**
@@ -44,7 +55,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('book.edit', compact('book'));
     }
 
     /**
@@ -52,7 +63,17 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        $validation = $request->validate([
+            'category'=> 'required',
+            'book_name'=> 'required',
+            'price'=> 'required',
+            'stock'=> 'required',
+            'publisher'=> 'required', 
+        ]);
+
+        $book->update($validation);
+
+        return redirect()->route('admin');
     }
 
     /**
@@ -60,6 +81,7 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        $book->delete();
+        return redirect()->route('admin');
     }
 }

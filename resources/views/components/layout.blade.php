@@ -1,21 +1,15 @@
-<nav x-data="{ open: false }" class="bg-blue-200 border-b pb-3 border-gray-100 ">
-<div class="flex ml-14">
-                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex hover:bg-red-400">
-                        <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-slate-200">
-                            {{ __('Home') }}
-                        </x-nav-link>
-                    </div>
-                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex hover:bg-red-400">
-                        <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')" class="text-slate-200">
-                            {{ __('Admin') }}
-                        </x-nav-link>
-                    </div>
-                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex hover:bg-red-400">
-                            <x-nav-link :href="route('pengadaan')" :active="request()->routeIs('pengadaan')" class="text-slate-200">
-                                {{ __('Pengadaan') }}
-                        </x-nav-link>
-                    </div>
-                </div>
-            </div>
+<nav x-data="{ open: false }" class="bg-blue-200 border-b border-gray-100 shadow-md">
+    <div class="flex justify-center py-4"> <!-- Menambahkan padding vertikal -->
+        <div class="space-x-8 sm:flex">
+            <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-slate-800 text-2xl font-semibold hover:text-white hover:bg-red-400 transition duration-300 rounded-lg px-4 py-2">
+                {{ __('Home') }}
+            </x-nav-link>
+            <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')" class="text-slate-800 text-2xl font-semibold hover:text-white hover:bg-red-400 transition duration-300 rounded-lg px-4 py-2">
+                {{ __('Admin') }}
+            </x-nav-link>
+            <x-nav-link :href="route('pengadaan')" :active="request()->routeIs('pengadaan')" class="text-slate-800 text-2xl font-semibold hover:text-white hover:bg-red-400 transition duration-300 rounded-lg px-4 py-2">
+                {{ __('Pengadaan') }}
+            </x-nav-link>
+        </div>
+    </div>
 </nav>
-
