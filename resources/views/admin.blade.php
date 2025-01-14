@@ -9,9 +9,25 @@
 <body>
 <x-app>
 
-<div>
-
-</div>
+    <div class="container">
+        <h1>Manajemen Data Buku</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Book id</th>
+                    <th>Category</th>
+                    <th>Book Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Publisher</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+    </div>
 
 </x-app>
 </body>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,3 +19,8 @@ Route::get('/pengadaan', function () {
     return view('pengadaan');
 })->name('pengadaan');
 
+Route::get('/book.create', [BookController::class, 'index']); 
+Route::get('/book.' )
+
+
+?>
