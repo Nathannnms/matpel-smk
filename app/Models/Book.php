@@ -9,6 +9,9 @@ class Book extends Model
 {
     protected $guarded = [];
 
+
+    protected $table = 'books';
+    
     protected $fillable = [
         'book_id',
         'category',

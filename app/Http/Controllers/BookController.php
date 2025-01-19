@@ -13,6 +13,7 @@ class BookController extends Controller
     public function index()
     {
         $allBook = Book::all();
+        // dd($allBook);
         return view('admin', compact('allBook'));
     }
 
@@ -30,6 +31,7 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $validation = $request->validate([
+            'book_id'=> 'required|unique:books',
             'category'=> 'required',
             'book_name'=> 'required',
             'price'=> 'required',
