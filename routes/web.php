@@ -18,10 +18,10 @@ Route::get('/pengadaan', function () {
 Route::get('/admin', [BookController::class, 'index'])->name('admin');
 Route::get('/book.create', [BookController::class, 'create'])->name('book.create'); 
 Route::post('/book.store', [BookController::class, 'store'])->name('book.store');
-Route::get('/book.edit', [BookController::class, 'edit'])->name('book.edit');
+Route::put('/book.edit', [BookController::class, 'edit'])->name('book.edit');
 Route::get('/book.show', [BookController::class, 'show'])->name('book.show');
-Route::get('/book.delete', [BookController::class, 'delete'])->name('book.delete');
+Route::delete('/book.delete', [BookController::class, 'delete'])->name('book.delete');
 Route::get('/book.update', [BookController::class, 'update'])->name('book.update');
-
+Route::resource('book', BookController::class);
 
 ?>

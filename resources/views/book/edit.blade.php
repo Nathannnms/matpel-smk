@@ -11,8 +11,9 @@
 
     <div class="container">
         <h1>Edit Book Data</h1>
-        <form action="{{ route('book.update', $book ->id) }}" method="POST">
+        <form action="{{ route('book.update', $book ->book_id) }}" method="post">
     @csrf
+    @method('put')
     <div class="form-group">
         <label for="">Book ID</label>
         <input type="text" name="book_id" id="" value="{{$book->book_id}}" required>

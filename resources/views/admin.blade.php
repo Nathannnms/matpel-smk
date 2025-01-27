@@ -34,9 +34,9 @@
                     <td>{{ $r->stock}}</td>
                     <td>{{ $r->publisher}}</td>
                         <td>
-                            <form action="{{ route('book.delete', $r->id)}}" method="POST">
-                                <a href="{{ route('book.show', $r->id) }}" class="button">Detail</a>
-                                <a href="{{ route('book.edit', $r->id) }}" class="button">Edit</a>
+                            <form action="{{ route('book.delete', $r->book_id)}}" method="POST">
+                                <a href="{{ route('book.show', $r->book_id) }}" class="button">Detail</a>
+                                <a href="{{ route('book.edit', $r->book_id) }}" class="button">Edit</a>
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="button">Delete</button>

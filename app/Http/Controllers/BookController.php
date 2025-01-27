@@ -72,10 +72,10 @@ class BookController extends Controller
             'stock'=> 'required',
             'publisher'=> 'required', 
         ]);
-
+    
         $book->update($validation);
-
-        return redirect()->route('admin');
+    
+        return redirect()->route('admin')->with('success', 'Book updated successfully');
     }
 
     /**
