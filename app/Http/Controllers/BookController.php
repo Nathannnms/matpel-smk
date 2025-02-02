@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    public function home(Request $request)
+    {
+        $search = $request->input('search');
+        
+        $allBook = Book::when($search, function ($query, $search) {
+            return $query->where('book_id', 'like', "%$search%")
+                         ->orWhere('category', 'like', "%$search%");
+        })->get();
+
+        return view('home', compact('allBook'));
+    }
     /**
      * Display a listing of the resource.
      */
@@ -83,7 +94,7 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        $book->delete();
-        return redirect()->route('admin');
+        $book -> delete();
+        return redirect('admin')->with('error', 'Song not found');
     }
 }
